@@ -1,0 +1,24 @@
+# Step 1: Configure your AWS CLI
+PS C:\Users\sneha> aws configure
+AWS Access Key ID [****************DQGP]: ********************
+AWS Secret Access Key [****************wJpo]: **************************
+Default region name [ap-south-1]: ap-south-1
+Default output format [Json]: Json
+
+# Step 2: List the bucket
+PS C:\Users\sneha> aws s3 ls s3://mybucketforss3/
+2025-08-07 23:51:52      31321 S3 Bucket.jpeg
+2025-08-08 00:07:29      73011 imageaws.jpg
+
+# Step 3:  Download the object (s3:GetObject)
+PS C:\Users\sneha>  aws s3 cp "s3://mybucketforss3/S3 Bucket.jpeg" "C:/Users/sneha/Downloads"
+Completed 30.6 KiB/30.6 KiB (91.3 KiB/s) with 1 file(s) remainindownload: s3://mybucketforss3/S3 Bucket.jpeg to Downloads\S3 Bucket.jpeg
+
+# Step 4: Pull the object (s3:PullObject)
+PS C:\Users\sneha>  aws s3 cp "C:\Users\sneha\Downloads\imageaws.jpg" s3://mybucketforss3/
+Completed 71.3 KiB/71.3 KiB (127.3 KiB/s) with 1 file(s) remainiupload: Downloads\imageaws.jpg to s3://mybucketforss3/imageaws.jpg
+
+# Step 5: List the bucket
+PS C:\Users\sneha> aws s3 ls s3://mybucketforss3/
+2025-08-07 23:51:52      31321 S3 Bucket.jpeg
+2025-08-08 00:35:26      73011 imageaws.jpg
