@@ -48,6 +48,7 @@ This policy allows another AWS account (Account B) to:
 
 
 
+
 5.	Explanation of Policy Sections
 
 Statement 1: AllowAccountBReadWriteAccess
