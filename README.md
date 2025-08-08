@@ -8,7 +8,7 @@ Allow another AWS account to list, download and pull files from your S3 bucket u
 2. Bucket Information
 -	Bucket Name: mybucketforss3
 -	Owner Account (Account A): The account where the bucket exists
--	Grantee Account (Account B): 235969062113
+-	Grantee Account (Account B): 123********789
 
 
 3. Purpose of the Policy
@@ -21,50 +21,27 @@ This policy allows another AWS account (Account B) to:
 4.	Full Policy JSON
    
 {
-
 "Version": "2012-10-17",
-
 "Statement": [
-
 {
-
-
 "Sid": "AllowAccountBReadWriteAccess",
-
 "Effect": "Allow",
-
 "Principal": {
-
 "AWS": "arn:aws:iam::235969062113:root"
-
 },
-
 "Action": [ "s3:GetObject", "s3:PutObject"
-
 ],
-
 "Resource": "arn:aws:s3:::mybucketforss3/*"
-
 },
-
 {
-
 "Sid": "AllowAccountBListBucket", "Effect": "Allow",
-
 "Principal": {
-
 "AWS": "arn:aws:iam::235969062113:root"
-
 },
-
 "Action": "s3:ListBucket",
-
 "Resource": "arn:aws:s3:::mybucketforss3"
-
 }
-
 ]
-
 }
 
 
@@ -115,12 +92,12 @@ Statement 2: AllowAccountBListBucket
 -	Resource: arn:aws:s3:::mybucketforss3
 
 
-How to Apply This Policy
-6.	Open the AWS Management Console.
-7.	Go to S3 and select 'mybucketforss3'.
-8.	Click the 'Permissions' tab.
-9.	Open the 'Bucket Policy' editor.
-10.	Paste the policy and save.
+~How to Apply This Policy
+-Open the AWS Management Console.
+-Go to S3 and select 'mybucketforss3'.
+-Click the 'Permissions' tab.
+-Open the 'Bucket Policy' editor.
+-Paste the policy and save.
 
 
 Testing the Access (From Account B)
@@ -132,5 +109,3 @@ aws s3 cp "s3://mybucketforss3/example.jpg" "./"
 
 -	Upload Object:
 aws s3 cp "./newfile.txt" "s3://mybucketforss3/newfile.txt"
-
-
