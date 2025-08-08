@@ -1,7 +1,8 @@
 # s3-cross-account-access
-Allow another AWS account to list, download and pull files from your S3 bucket using IAM policies and CLI
+Allow another AWS account to list, download and pull files from your S3 bucket using IAM policies and CLI.
+
 1. S3 Bucket Policy for Cross-Account Access
-This document provides details about an AWS S3 bucket policy that enables cross-account access, allowing another AWS account to list, read, and write to a specific S3 bucket named 'mybucketforss3'.
+-This document provides details about an AWS S3 bucket policy that enables cross-account access, allowing another AWS account to list, read, and write to a specific S3 bucket named 'mybucketforss3'.
 
 
 2. Bucket Information
@@ -18,37 +19,53 @@ This policy allows another AWS account (Account B) to:
 
 
 4.	Full Policy JSON
+   
 {
+
 "Version": "2012-10-17",
+
 "Statement": [
+
 {
 
-"Sid": "AllowAccountBReadWriteAccess", "Effect": "Allow",
+
+"Sid": "AllowAccountBReadWriteAccess",
+
+"Effect": "Allow",
+
 "Principal": {
 
 "AWS": "arn:aws:iam::235969062113:root"
+
 },
+
 "Action": [ "s3:GetObject", "s3:PutObject"
+
 ],
+
 "Resource": "arn:aws:s3:::mybucketforss3/*"
+
 },
+
 {
+
 "Sid": "AllowAccountBListBucket", "Effect": "Allow",
+
 "Principal": {
+
 "AWS": "arn:aws:iam::235969062113:root"
+
 },
+
 "Action": "s3:ListBucket",
+
 "Resource": "arn:aws:s3:::mybucketforss3"
+
 }
+
 ]
+
 }
-
-
-
-
-
-
-
 
 
 5.	Explanation of Policy Sections
@@ -63,7 +80,7 @@ Statement 2: AllowAccountBListBucket
 -	Effect: Allow
 -	Principal: arn:aws:iam::235969062113:root
 -	Action: s3:ListBucket (for bucket)
--	
+  
 
 6.	How to Apply This Policy
 1.	Open the AWS Management Console.
