@@ -22,8 +22,10 @@ This policy allows another AWS account (Account B) to:
 "Version": "2012-10-17",
 "Statement": [
 {
+
 "Sid": "AllowAccountBReadWriteAccess", "Effect": "Allow",
 "Principal": {
+
 "AWS": "arn:aws:iam::235969062113:root"
 },
 "Action": [ "s3:GetObject", "s3:PutObject"
