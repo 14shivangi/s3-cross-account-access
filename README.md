@@ -19,6 +19,9 @@ This policy allows another AWS account (Account B) to:
 
 
 4.	Full Policy JSON
+   image/bucket_policy.png
+
+
    
 {
 "Version": "2012-10-17",
