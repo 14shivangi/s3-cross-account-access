@@ -19,7 +19,7 @@ This policy allows another AWS account (Account B) to:
 
 
 4.	Full Policy JSON
-   image/bucket_policy.png
+   <img width="1920" height="956" alt="Image" src="https://github.com/user-attachments/assets/9bdc9649-46f2-402f-8c58-f8aa46626ef2" />
 
 
    
