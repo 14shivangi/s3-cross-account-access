@@ -60,6 +60,7 @@ Statement 2: AllowAccountBListBucket
   
 
 6.	How to Apply This Policy
+   
 1.	Open the AWS Management Console.
 2.	Go to S3 and select 'mybucketforss3'.
 3.	Click the 'Permissions' tab.
