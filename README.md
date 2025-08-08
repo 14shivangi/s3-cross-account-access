@@ -22,43 +22,17 @@ This policy allows another AWS account (Account B) to:
    <img width="1920" height="956" alt="Image" src="https://github.com/user-attachments/assets/9bdc9649-46f2-402f-8c58-f8aa46626ef2" />
 
 
-   
-{
-"Version": "2012-10-17",
-"Statement": [
-{
-"Sid": "AllowAccountBReadWriteAccess",
-"Effect": "Allow",
-"Principal": {
-"AWS": "arn:aws:iam::235969062113:root"
-},
-"Action": [ "s3:GetObject", "s3:PutObject"
-],
-"Resource": "arn:aws:s3:::mybucketforss3/*"
-},
-{
-"Sid": "AllowAccountBListBucket", "Effect": "Allow",
-"Principal": {
-"AWS": "arn:aws:iam::235969062113:root"
-},
-"Action": "s3:ListBucket",
-"Resource": "arn:aws:s3:::mybucketforss3"
-}
-]
-}
-
-
 5.	Explanation of Policy Sections
 
 Statement 1: AllowAccountBReadWriteAccess
 -	Effect: Allow
--	Principal: arn:aws:iam::235969062113:root
+-	Principal: arn:aws:iam::123******789:root
 -	Actions: s3:GetObject, s3:PutObject (for objects)
 -	Resource: arn:aws:s3:::mybucketforss3/*
 
 Statement 2: AllowAccountBListBucket
 -	Effect: Allow
--	Principal: arn:aws:iam::235969062113:root
+-	Principal: arn:aws:iam::123*****789:root
 -	Action: s3:ListBucket (for bucket)
   
 
@@ -85,13 +59,13 @@ aws s3 cp "./newfile.txt" "s3://mybucketforss3/newfile.txt"
  
 Statement 1: AllowAccountBReadWriteAccess
 -	Effect: Allow
--	Principal: arn:aws:iam::235969062113:root
+-	Principal: arn:aws:iam::123*****789:root
 -	Actions: s3:GetObject, s3:PutObject (for objects)
 -	Resource: arn:aws:s3:::mybucketforss3/*
 
 Statement 2: AllowAccountBListBucket
 -	Effect: Allow
--	Principal: arn:aws:iam::235969062113:root
+-	Principal: arn:aws:iam::123*****789:root
 -	Action: s3:ListBucket (for bucket)
 -	Resource: arn:aws:s3:::mybucketforss3
 
