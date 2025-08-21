@@ -11,7 +11,7 @@ Allow another AWS account to list, download and pull files from your S3 bucket u
 -	Grantee Account (Account B): 123********789
 
 
-3. Purpose of the Policy
+3. Purpose of the Policy.
 This policy allows another AWS account (Account B) to:
 1.	List the contents of the bucket (s3:ListBucket)
 2.	Download objects from the bucket (s3:GetObject)
