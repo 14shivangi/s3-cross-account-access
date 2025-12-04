@@ -1,4 +1,4 @@
-# s3-cross-account-access
+# *S3_CROSS_ACCOUNT_ACCESS*
 Allow another AWS account to list, download and pull files from your S3 bucket using IAM policies and CLI.
 
 #### 1. S3 Bucket Policy for Cross-Account Access
