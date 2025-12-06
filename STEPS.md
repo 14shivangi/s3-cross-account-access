@@ -1,6 +1,9 @@
 # *S3_CROSS_ACCOUNT_ACCESS*
 Allow another AWS account to list, download and pull files from your S3 bucket using IAM policies and CLI.
 
+<img width="700" height="500" alt="Image" src="https://github.com/user-attachments/assets/6006f4a1-cb62-41f7-bd1c-3ad571071547" />
+
+
 #### 1. S3 Bucket Policy for Cross-Account Access
 -This document provides details about an AWS S3 bucket policy that enables cross-account access, allowing another AWS account to list, read, and write to a specific S3 bucket named 'mybucketforss3'.
 
