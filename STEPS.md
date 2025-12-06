@@ -1,4 +1,5 @@
 # *S3_CROSS_ACCOUNT_ACCESS*
+
 Allow another AWS account to list, download and pull files from your S3 bucket using IAM policies and CLI.
 
 <img width="700" height="500" alt="Image" src="https://github.com/user-attachments/assets/6006f4a1-cb62-41f7-bd1c-3ad571071547" />
@@ -20,11 +21,12 @@ This policy allows another AWS account (Account B) to:
 2.	Download objects from the bucket (s3:GetObject)
 3.	Upload objects to the bucket (s3:PutObject)
 
-#### 4.	Full Policy JSON
+####  4. Full Policy JSON
    <img width="1920" height="956" alt="Image" src="https://github.com/user-attachments/assets/9bdc9649-46f2-402f-8c58-f8aa46626ef2" />
 
 
-#### 5.	Explanation of Policy Sections
+####  5. Explanation of Policy Sections
+
 ```
 #### Statement 1: AllowAccountBReadWriteAccess
 -	Effect: Allow
@@ -38,7 +40,7 @@ This policy allows another AWS account (Account B) to:
 -	Action: s3:ListBucket (for bucket)
 ```  
 
-#### 6.	How to Apply This Policy
+####  6.	How to Apply This Policy
    
 1.	Open the AWS Management Console.
 2.	Go to S3 and select 'mybucketforss3'.
@@ -73,7 +75,7 @@ Statement 1:  AllowAccountBReadWriteAccess
 -	Resource: arn:aws:s3:::mybucketforss3
 ```
 
-#### How to Apply This Policy
+####  How to Apply This Policy:
 - Open the AWS Management Console.
 - Go to S3 and select 'mybucketforss3'.
 - Click the 'Permissions' tab.
@@ -136,31 +138,35 @@ Full Bucket Policy:
 }
 ```
 
-# Explanation of Policy: 
+#### Explanation of Policy: 
+
 Statement 1: AllowAccountBReadWriteAccess
 - Effect: Allow
 - Principal: Account B root user
 - Actions: s3:GetObject, s3:PutObject (object-level access)
 - Resource: arn:aws:s3:::mybucketforss3/*
+
 Statement 2: AllowAccountBListBucket
 - Effect: Allow
 - Principal: Account B root user
 - Action: s3:ListBucket (bucket-level access)
 - Resource: arn:aws:s3:::mybucketforss3
-# How to Apply This Policy
+
+#### How to Apply This Policy
 1. Open AWS Management Console.
 2. Navigate to S3 and select the bucket 'mybucketforss3'.
 3. Go to the Permissions tab.
 4. Open Bucket Policy editor.
 5. Paste the above JSON policy and Save.
 Testing Access (From Account B)
-# List Bucket:
+
+#### List Bucket:
 aws s3 ls s3://mybucketforss3
-# Download Object:
+#### Download Object:
 aws s3 cp "s3://mybucketforss3/example.jpg" "./"
-# Upload Object:
+#### Upload Object:
 aws s3 cp "./newfile.txt" "s3://mybucketforss3/newfile.txt"
-Note:
+##### Note:
 - Ensure AWS CLI is configured in Account B with the correct credentials.
 - This policy applies only to the specified bucket 'mybucketforss3'.
 - Access is granted to the root user of Account B (can be scoped to specific IAM roles/users if needed).
