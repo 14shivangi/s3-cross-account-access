@@ -108,7 +108,7 @@ This gives visibility of the bucket's object keys, but not access to the actual 
 ## 🧪 8. Testing Access From Account B (AWS CLI)
 
 ### **List Bucket Contents**
-```bash
+```
 aws s3 ls s3://mybucketforss3
 ```
 
@@ -116,5 +116,11 @@ aws s3 ls s3://mybucketforss3
 ### **Download an Object**
 ```bash
 aws s3 cp "s3://mybucketforss3/example.jpg" "./"
+```
+
+### **Upload an Object**
+```
+aws s3 cp "./newfile.txt" "s3://mybucketforss3/newfile.txt"
+```
 
 
