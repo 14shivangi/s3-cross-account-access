@@ -13,6 +13,10 @@ Sometimes, you need to **share your S3 bucket with another AWS account**, for ex
 **Cross-account access** makes this possible in a secure and controlled way.
 This project explains **how to allow another AWS account to list, download, and upload files** to your bucket using a **Bucket Policy**.
 
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/6bc0abe9-bdbc-4b01-bb61-f7d7d59a5dee" />
+
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/6006f4a1-cb62-41f7-bd1c-3ad571071547" />
+
 ## 🎯 2. Why Cross-Account Access Is Needed
 Organizations often use multiple AWS accounts for:
 
