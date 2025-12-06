@@ -1,8 +1,6 @@
 # 🚀 S3 Cross-Account Access Using Bucket Policies  
 A practical demonstration of how to securely share an Amazon S3 bucket with another AWS account using IAM policies and bucket permissions.
 
----
-
 ## 📘 1. Introduction
 
 Amazon S3 is widely used for storage across applications, teams, and organizations.  
@@ -13,13 +11,9 @@ Sometimes, you need to **share your S3 bucket with another AWS account**, for ex
 - Centralizing storage in one account and accessing it from another  
 
 **Cross-account access** makes this possible in a secure and controlled way.
-
 This project explains **how to allow another AWS account to list, download, and upload files** to your bucket using a **Bucket Policy**.
 
----
-
 ## 🎯 2. Why Cross-Account Access Is Needed
-
 Organizations often use multiple AWS accounts for:
 
 - Security separation  
@@ -35,9 +29,7 @@ Instead of copying data between buckets or accounts, **S3 cross-account access**
 - Lower storage cost  
 - Better data governance  
 
----
-
-## 🛠️ 3. How It Works (Concept)
+## 🛠️ 3. How It Works 
 
 S3 access is controlled by two things:
 
@@ -51,8 +43,6 @@ In this setup:
 
 Access is given by writing a **bucket policy** in Account A.
 
----
-
 ## 📦 4. Bucket Details
 
 | Property | Value |
@@ -61,7 +51,7 @@ Access is given by writing a **bucket policy** in Account A.
 | **Account A** | Bucket owner |
 | **Account B** | `123********789` (grantee account) |
 
----
+
 ## 🔍 5. Explanation of the Policy
 
 ### **Statement 1 – Object-Level Permissions**
@@ -76,7 +66,6 @@ This statement allows **Account B** to interact with the objects stored in the b
 
   This means the permissions apply to **all objects inside the bucket**, not the bucket itself.
 
----
 
 ### **Statement 2 – Bucket-Level Permissions**
 This statement allows Account B to interact with the bucket **metadata**.
@@ -89,9 +78,7 @@ This statement allows Account B to interact with the bucket **metadata**.
 
 This gives visibility of the bucket's object keys, but not access to the actual objects unless allowed by Statement 1.
 
----
-
-## ⚙️ 7. How to Apply This Policy (Step-by-Step)
+## ⚙️ 6. How to Apply This Policy (Step-by-Step)
 
 1. Log in to the **AWS Management Console**.  
 2. Navigate to **S3**.  
@@ -103,9 +90,8 @@ This gives visibility of the bucket's object keys, but not access to the actual 
 
 ✔️ The cross-account access is now active.
 
----
 
-## 🧪 8. Testing Access From Account B (AWS CLI)
+## 🧪 7. Testing Access From Account B (AWS CLI)
 
 ### **List Bucket Contents**
 ```
@@ -114,7 +100,7 @@ aws s3 ls s3://mybucketforss3
 
 
 ### **Download an Object**
-```bash
+```
 aws s3 cp "s3://mybucketforss3/example.jpg" "./"
 ```
 
@@ -123,7 +109,7 @@ aws s3 cp "s3://mybucketforss3/example.jpg" "./"
 aws s3 cp "./newfile.txt" "s3://mybucketforss3/newfile.txt"
 ```
 
-## ⭐ 9. Advantages of S3 Cross-Account Access
+## ⭐ 8. Advantages of S3 Cross-Account Access
 
 - Enables secure sharing of S3 data between different AWS accounts  
 - Eliminates the need for duplicating data across buckets  
@@ -134,7 +120,7 @@ aws s3 cp "./newfile.txt" "s3://mybucketforss3/newfile.txt"
 
 ---
 
-## ⚠️ 10. Limitations / Disadvantages
+## ⚠️ 9. Limitations / Disadvantages
 
 - Incorrectly written policies may unintentionally expose data  
 - Manual updates required when modifying or revoking access  
@@ -144,33 +130,11 @@ aws s3 cp "./newfile.txt" "s3://mybucketforss3/newfile.txt"
 
 ---
 
-## 📌 11. Best Practices
-
-- Grant permissions to **IAM roles**, not the root user  
-- Always follow the **Principle of Least Privilege**  
-- Enable **S3 Server Access Logging** for detailed auditing  
-- Use **IAM Conditions** (IP restrictions, encryption rules, prefix restrictions) for tighter security  
-- Keep **Block Public Access** ON unless required for a specific use case  
-
----
-
-## 🏁 12. Conclusion
+## 🏁 10. Conclusion
 
 S3 Cross-Account Access provides a secure, scalable, and cost-efficient way to share S3 data between AWS accounts.  
 It helps avoid duplication, reduces management overhead, and maintains centralized data governance.  
 With this guide, you can configure, apply, and test cross-account access effectively for real-world AWS environments.
-
----
-
-## 🧩 13. Optional Enhancements
-
-You can extend this setup with:
-
-- IAM Role–based cross-account access  
-- Terraform automation for S3 bucket policies  
-- CloudTrail logging for access visibility and auditing  
-- S3 lifecycle rules for automated object management  
-- Cross-account or cross-region S3 replication  
 
 ---
 
